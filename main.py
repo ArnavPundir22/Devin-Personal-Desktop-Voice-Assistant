@@ -75,6 +75,8 @@ def casual_talk(query):
         "thank you": "You're always welcome, Sir.",
         "are you real": "As real as software can be!",
         "do you love me": "I admire your coding skills, Sir!",
+        "i am good": "I hope that you always remain the same!!",
+        "can you do me a favour": "Yes Sir! It's my pleasure to help you, Please tell me how can I help You? "
     }
 
     for key in responses:
@@ -120,14 +122,15 @@ def set_volume(level):
         interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
         volume = cast(interface, POINTER(IAudioEndpointVolume))
 
-        # Volume range is from -96.0 to 0.0 dB. Map 0–100 to this range.
-        min_vol, max_vol = volume.GetVolumeRange()[0:2]
-        target_vol = min_vol + (level / 100.0) * (max_vol - min_vol)
-        volume.SetMasterVolumeLevel(target_vol, None)
+        # Use scalar volume (0.0 to 1.0)
+        volume.SetMasterVolumeLevelScalar(level / 100.0, None)
 
         speak(f"Volume set to {level} percent.")
     except Exception as e:
         speak("Failed to set volume.")
+        print(f"Error: {e}")
+
+
 
 def close_application(app_name):
     closed = False
@@ -269,7 +272,7 @@ def assistant_loop():
             command = take_command()
             if command:
                 gui.log_conversation("You", command)
-                if "shut up" in command:
+                if "shut up" in command or "stop listening" in command:
                     speak("Okay, going into standby. Say 'listen' to wake me up.")
                     active_mode = False
                 else:
