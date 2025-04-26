@@ -227,7 +227,13 @@ def handle_command(query):
         url = f"https://www.google.com/search?q={search_term}"
         webbrowser.open(url)
         speak(f"Searching Google for {search_term}")
-
+# ================================================================
+# Project: Face Recognition Based Attendance System
+# Author: Arnav Pundir
+# Year: 2025
+# License: Custom Proprietary License - All Rights Reserved
+# Unauthorized use, copying, or distribution is strictly prohibited.
+# ================================================================
     elif "wikipedia" in query:
         try:
             topic = query.replace("wikipedia", "").strip()
