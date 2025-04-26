@@ -228,7 +228,7 @@ def handle_command(query):
         webbrowser.open(url)
         speak(f"Searching Google for {search_term}")
 # ================================================================
-# Project: Face Recognition Based Attendance System
+# Project: Devin - Personal DEsktop Assistant
 # Author: Arnav Pundir
 # Year: 2025
 # License: Custom Proprietary License - All Rights Reserved
