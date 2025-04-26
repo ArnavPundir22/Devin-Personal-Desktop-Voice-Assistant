@@ -254,7 +254,13 @@ def handle_command(query):
             close_application(app_name + ".exe")
         else:
             speak("Please specify which app you want to close.")
-
+# ================================================================
+# Project: Devin - Personal Desktop Voice Assistant
+# Author: Arnav Pundir
+# Year: 2025
+# License: Custom Proprietary License - All Rights Reserved
+# Unauthorized use, copying, or distribution is strictly prohibited.
+# ================================================================
     elif "exit" in query or "quit" in query or "band ho ja" in query:
         speak("Goodbye Sir! Call me when you need me again.")
         sys.exit()
