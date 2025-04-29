@@ -5,7 +5,7 @@ Devin is a Python-based desktop AI assistant that offers voice and text control 
 ---
 
 ## Creator
-**Developed by:** *Arnav Pundir* , *Atharv kumar* and *Aman Bhatti*
+**Developed by:** *Arnav Pundir* 
 
 ---
 
